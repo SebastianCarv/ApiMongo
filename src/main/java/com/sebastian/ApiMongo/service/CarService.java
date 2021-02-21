@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 
@@ -22,7 +23,11 @@ public class CarService {
         return carros;
     }
 
+    public Optional<Car> find(String id){
+        Optional<Car> carros = carRespository.findById(id);
+        return carros;
 
+    }
 
 
 }
