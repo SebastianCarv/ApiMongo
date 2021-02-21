@@ -18,5 +18,5 @@ public class Car implements Serializable {
     private String brand;
     @NonNull
     private Integer year;
-    
+
 }
