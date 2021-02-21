@@ -5,10 +5,7 @@ import com.sebastian.ApiMongo.service.CarService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -22,8 +19,8 @@ public class CarController {
     @GetMapping("/findall")
 
     // lleva identificador de acceso, tipo de dato que retorna, nombre de metodo y los parametros
-    public ResponseEntity<List <Car>> findAll(){
-        return new ResponseEntity <>(carService.findAll(), HttpStatus.OK);
+    public List <Car> findAll(){
+        return carService.findAll();
 
     }
 
@@ -32,6 +29,12 @@ public class CarController {
     public Optional<Car> find(@PathVariable("id") String id){
         return carService.find(id);
 
+    }
+
+    @DeleteMapping ("/delete/{id}")
+    public String delete(@PathVariable("id")String id){
+        carService.delete(id);
+        return id;
     }
 
 

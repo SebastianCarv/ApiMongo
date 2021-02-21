@@ -5,6 +5,7 @@ import com.sebastian.ApiMongo.repository.CarRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.io.Serializable;
 import java.util.List;
 import java.util.Optional;
 
@@ -29,5 +30,9 @@ public class CarService {
 
     }
 
+    public void delete(String id){
+       carRespository.deleteById(id);
+
+    }
 
 }
