@@ -37,6 +37,19 @@ public class CarController {
         return id;
     }
 
+    @PostMapping("/insert")
+
+    public Car insert(@RequestBody Car insertCar ){
+        return carService.create(insertCar);
+
+    }
+
+    @PutMapping("/update")
+    public Car update(@RequestBody Car updateCar){
+        return carService.update(updateCar);
+
+
+    }
 
 
 }

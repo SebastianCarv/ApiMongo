@@ -34,5 +34,15 @@ public class CarService {
        carRespository.deleteById(id);
 
     }
+    public Car create(Car car){
+        Car newcar = carRespository.save(car);
+        return newcar;
+    }
+
+    public Car update(Car car){
+        Car updatecar = carRespository.save(car);
+        return updatecar;
+
+    }
 
 }
