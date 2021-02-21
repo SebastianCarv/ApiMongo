@@ -1,22 +1,25 @@
 package com.sebastian.ApiMongo.entity;
 
 import com.mongodb.lang.NonNull;
+import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.io.Serializable;
 
 @Document(collection = "cars")
-
+@Data
 public class Car implements Serializable {
     @Id
     @NonNull
     private String _id;
-    @NonNull
+
     private String model;
-    @NonNull
+
     private String brand;
-    @NonNull
+
     private Integer year;
+
+    private String color;
 
 }
